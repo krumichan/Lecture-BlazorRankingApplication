@@ -76,14 +76,21 @@ using Lecture_BlazorRankingApplication.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\Pages\FetchData.razor"
-using Lecture_BlazorRankingApplication.Data;
+#line 2 "C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\Pages\Ranking.razor"
+using Lecture_BlazorRankingApplication.Data.Models;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata")]
-    public partial class FetchData : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 3 "C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\Pages\Ranking.razor"
+using Lecture_BlazorRankingApplication.Data.Services;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/ranking")]
+    public partial class Ranking : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -91,19 +98,20 @@ using Lecture_BlazorRankingApplication.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\Pages\FetchData.razor"
+#line 38 "C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\Pages\Ranking.razor"
        
-    private WeatherForecast[] forecasts;
+
+    List<GameResult> _gameResults;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        _gameResults = await RankingService.GetGameResultsAsync();
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private WeatherForecastService ForecastService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private RankingService RankingService { get; set; }
     }
 }
 #pragma warning restore 1591

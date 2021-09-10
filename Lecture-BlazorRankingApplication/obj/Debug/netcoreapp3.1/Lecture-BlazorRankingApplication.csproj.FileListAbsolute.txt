@@ -69,8 +69,6 @@ C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture
 C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\Lecture-BlazorRankingApplication.MvcApplicationPartsAssemblyInfo.cache
 C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\Lecture-BlazorRankingApplication.RazorComponent.input.cache
 C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
-C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Counter.razor.g.cs
-C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\FetchData.razor.g.cs
 C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
 C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\LoginDisplay.razor.g.cs
 C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
@@ -83,8 +81,6 @@ C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture
 C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\Lecture-BlazorRankingApplication.TagHelpers.output.cache
 C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\Lecture-BlazorRankingApplication.RazorCoreGenerate.cache
 C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
-C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\Razor\Pages\Counter.razor.g.cs
-C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\Razor\Pages\FetchData.razor.g.cs
 C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
 C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\Razor\Shared\LoginDisplay.razor.g.cs
 C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
@@ -107,3 +103,5 @@ C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture
 C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\Lecture-BlazorRankingApplication.dll
 C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\Lecture-BlazorRankingApplication.pdb
 C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\Lecture-BlazorRankingApplication.genruntimeconfig.cache
+C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Ranking.razor.g.cs
+C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\Razor\Pages\Ranking.razor.g.cs

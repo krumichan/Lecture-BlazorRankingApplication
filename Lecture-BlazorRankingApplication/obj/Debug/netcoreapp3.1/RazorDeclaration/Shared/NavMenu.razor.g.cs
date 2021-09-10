@@ -83,7 +83,7 @@ using Lecture_BlazorRankingApplication.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\Shared\NavMenu.razor"
+#line 23 "C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
