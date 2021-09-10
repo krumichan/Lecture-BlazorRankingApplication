@@ -22,6 +22,8 @@
                         <th>User Name</th>
                         <th>Score</th>
                         <th>Date</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,6 +33,12 @@
                             <td>@gameResult.UserName</td>
                             <td>@gameResult.Score</td>
                             <td>@gameResult.Date.ToString()</td>
+                            <td>
+                                <button class="btn btn-secondary" @onclick="() => UpdateGameResult(gameResult)">Edit</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" @onclick="() => DeleteGameResult(gameResult)">Delete</button>
+                            </td>
                         </tr>
                     }
                 </tbody>
@@ -100,20 +108,33 @@
         _showPopup = false;
     }
 
+    private void UpdateGameResult(GameResult gameResult)
+    {
+        _showPopup = true;
+        _gameResult = gameResult;
+    }
+
+    private async Task DeleteGameResult(GameResult gameResult)
+    {
+        var result = RankingService.DeleteGameResult(gameResult);
+        _gameResults = await RankingService.GetGameResultsAsync();
+    }
+
     private async Task SaveGameResult()
     {
         // Create
         if (_gameResult.Id == 0)
         {
             _gameResult.Date = DateTime.Now;
-            var result = await RankingService.AddGameResult(_gameResult);
+            var result = RankingService.AddGameResult(_gameResult);
         }
         // Update
         else
         {
-
+            var result = RankingService.UpdateGameResult(_gameResult);
         }
 
+        _showPopup = false;
         _gameResults = await RankingService.GetGameResultsAsync();
     }
 }

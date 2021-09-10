@@ -35,7 +35,40 @@ namespace Lecture_BlazorRankingApplication.Data.Services
         }
 
         // Update
+         public Task<bool> UpdateGameResult(GameResult gameResult)
+        {
+            var find = _context.GameResults
+                        .Where(x => x.Id == gameResult.Id)
+                        .FirstOrDefault();
+
+            if (find == null)
+            {
+                return Task.FromResult(false);
+            }
+
+            find.UserName = gameResult.UserName;
+            find.Score = gameResult.Score;
+            _context.SaveChanges();
+
+            return Task.FromResult(true);
+        }
 
         // Delete
+        public Task<bool> DeleteGameResult(GameResult gameResult)
+        {
+            var find = _context.GameResults
+                        .Where(x => x.Id == gameResult.Id)
+                        .FirstOrDefault();
+
+            if (find == null)
+            {
+                return Task.FromResult(false);
+            }
+
+            _context.GameResults.Remove(gameResult);
+            _context.SaveChanges();
+
+            return Task.FromResult(true);
+        }
     }
 }
