@@ -1,0 +1,10 @@
+C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\SharedData\bin\Debug\netcoreapp3.1\SharedData.deps.json
+C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\SharedData\bin\Debug\netcoreapp3.1\SharedData.dll
+C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\SharedData\bin\Debug\netcoreapp3.1\SharedData.pdb
+C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\SharedData\obj\Debug\netcoreapp3.1\SharedData.csproj.AssemblyReference.cache
+C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\SharedData\obj\Debug\netcoreapp3.1\SharedData.GeneratedMSBuildEditorConfig.editorconfig
+C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\SharedData\obj\Debug\netcoreapp3.1\SharedData.AssemblyInfoInputs.cache
+C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\SharedData\obj\Debug\netcoreapp3.1\SharedData.AssemblyInfo.cs
+C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\SharedData\obj\Debug\netcoreapp3.1\SharedData.csproj.CoreCompileInputs.cache
+C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\SharedData\obj\Debug\netcoreapp3.1\SharedData.dll
+C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\SharedData\obj\Debug\netcoreapp3.1\SharedData.pdb
