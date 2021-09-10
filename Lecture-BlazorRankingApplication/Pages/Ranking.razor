@@ -35,6 +35,38 @@
                     }
                 </tbody>
             </table>
+
+            <p>
+                <button class="btn btn-primary" @onclick="AddGameResult">
+                    Add
+                </button>
+            </p>
+
+            @if (_showPopup)
+            {
+                <div class="modal" style="display:block" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title">Add/Update GameResult</h3>
+                                <button type="button" class="close" @onclick="ClosePopup">
+                                    <span area-hidden="true">X</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <label for="UserName">User Name</label>
+                                <input class="form-control" type="text" placeholder="User Name" @bind-value="_gameResult.UserName" />
+                                <label for="Score">Score</label>
+                                <input class="form-control" type="text" placeholder="Score" @bind-value="_gameResult.Score" />
+
+                                <button class="btn btn-primary" @onclick="SaveGameResult">
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
         }
     </Authorized>
 
@@ -49,8 +81,39 @@
 
     List<GameResult> _gameResults;
 
+    bool _showPopup;
+    GameResult _gameResult;
+
     protected override async Task OnInitializedAsync()
     {
+        _gameResults = await RankingService.GetGameResultsAsync();
+    }
+
+    private void AddGameResult()
+    {
+        _showPopup = true;
+        _gameResult = new GameResult() { Id = 0 };
+    }
+
+    private void ClosePopup()
+    {
+        _showPopup = false;
+    }
+
+    private async Task SaveGameResult()
+    {
+        // Create
+        if (_gameResult.Id == 0)
+        {
+            _gameResult.Date = DateTime.Now;
+            var result = await RankingService.AddGameResult(_gameResult);
+        }
+        // Update
+        else
+        {
+
+        }
+
         _gameResults = await RankingService.GetGameResultsAsync();
     }
 }
