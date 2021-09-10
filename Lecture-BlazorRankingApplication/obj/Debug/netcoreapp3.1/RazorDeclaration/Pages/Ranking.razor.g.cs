@@ -98,13 +98,44 @@ using Lecture_BlazorRankingApplication.Data.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\Pages\Ranking.razor"
+#line 80 "C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\Pages\Ranking.razor"
        
 
     List<GameResult> _gameResults;
 
+    bool _showPopup;
+    GameResult _gameResult;
+
     protected override async Task OnInitializedAsync()
     {
+        _gameResults = await RankingService.GetGameResultsAsync();
+    }
+
+    private void AddGameResult()
+    {
+        _showPopup = true;
+        _gameResult = new GameResult() { Id = 0 };
+    }
+
+    private void ClosePopup()
+    {
+        _showPopup = false;
+    }
+
+    private async Task SaveGameResult()
+    {
+        // Create
+        if (_gameResult.Id == 0)
+        {
+            _gameResult.Date = DateTime.Now;
+            var result = await RankingService.AddGameResult(_gameResult);
+        }
+        // Update
+        else
+        {
+
+        }
+
         _gameResults = await RankingService.GetGameResultsAsync();
     }
 
