@@ -1,0 +1,15 @@
+각 패키지는 해당 소유자에 의해 사용이 허가되었습니다. NuGet은 타사 패키지에 대해 책임을 지지 않으며 라이선스를 부여하지도 않습니다. 일부 패키지에는 추가 라이선스에 의해 관리되는 종속성이 포함되어 있을 수 있습니다. 패키지 소스(피드) URL로 이동하여 종속성을 확인하십시오.
+
+패키지 관리자 콘솔 호스트 버전 5.11.0.10
+
+사용 가능한 모든 NuGet 명령을 보려면 'get-help NuGet'을 입력하십시오.
+
+PM> add-migration RankingService
+Build started...
+Build succeeded.
+To undo this action, use Remove-Migration.
+PM> update-database
+Build started...
+Build succeeded.
+Done.
+PM> 

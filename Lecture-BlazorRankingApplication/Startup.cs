@@ -1,5 +1,6 @@
 using Lecture_BlazorRankingApplication.Areas.Identity;
 using Lecture_BlazorRankingApplication.Data;
+using Lecture_BlazorRankingApplication.Data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -39,7 +40,8 @@ namespace Lecture_BlazorRankingApplication
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
-            services.AddSingleton<WeatherForecastService>();
+
+            services.AddScoped<RankingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
