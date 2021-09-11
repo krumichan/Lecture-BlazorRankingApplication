@@ -1,74 +1,80 @@
-﻿using Lecture_BlazorRankingApplication.Data.Models;
+﻿using Newtonsoft.Json;
+using SharedData.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Lecture_BlazorRankingApplication.Data.Services
 {
+    // 기존 : [Client <-> Server -- DB](Blazor)
+    // 이후 : [Client](Blazor) <-> [Server -- DB](WebAPI)
     public class RankingService
     {
-        ApplicationDbContext _context;
+        HttpClient _httpClient;
 
-        public RankingService(ApplicationDbContext context)
+        public RankingService(HttpClient client)
         {
-            _context = context;
+            _httpClient = client;
         }
         
         // Create
-        public Task<GameResult> AddGameResult(GameResult gameResult)
+        public async Task<GameResult> AddGameResult(GameResult gameResult)
         {
-            _context.GameResults.Add(gameResult);
-            _context.SaveChanges();
+            string jsonStr = JsonConvert.SerializeObject(gameResult);
+            var content = new StringContent(jsonStr, Encoding.UTF8, "application/json");
+            var result = await _httpClient.PostAsync("api/ranking", content);
 
-            return Task.FromResult(gameResult);
+            if (result.IsSuccessStatusCode == false)
+            {
+                throw new Exception("AddGameResult Failed.");
+            }
+
+            var resultContent = await result.Content.ReadAsStringAsync();
+            GameResult resGameResult = JsonConvert.DeserializeObject<GameResult>(resultContent);
+
+            return resGameResult;
         }
 
         // Read
-        public Task<List<GameResult>> GetGameResultsAsync()
+        public async Task<List<GameResult>> GetGameResultsAsync()
         {
-            List<GameResult> results = _context.GameResults.ToList()
-                                .OrderByDescending(item => item.Score)
-                                .ToList();
+            var result = await _httpClient.GetAsync("api/ranking");
 
-            return Task.FromResult(results);
+            var resultContent = await result.Content.ReadAsStringAsync();
+            List<GameResult> resGameResults = JsonConvert.DeserializeObject<List<GameResult>>(resultContent);
+
+            return resGameResults;
         }
 
         // Update
-         public Task<bool> UpdateGameResult(GameResult gameResult)
+        public async Task<bool> UpdateGameResult(GameResult gameResult)
         {
-            var find = _context.GameResults
-                        .Where(x => x.Id == gameResult.Id)
-                        .FirstOrDefault();
+            string jsonStr = JsonConvert.SerializeObject(gameResult);
+            var content = new StringContent(jsonStr, Encoding.UTF8, "application/json");
+            var result = await _httpClient.PutAsync("api/ranking", content);
 
-            if (find == null)
+            if (result.IsSuccessStatusCode == false)
             {
-                return Task.FromResult(false);
+                throw new Exception("UpdateGameResult Failed.");
             }
-
-            find.UserName = gameResult.UserName;
-            find.Score = gameResult.Score;
-            _context.SaveChanges();
-
-            return Task.FromResult(true);
+            
+            return true;
         }
 
         // Delete
-        public Task<bool> DeleteGameResult(GameResult gameResult)
+        public async Task<bool> DeleteGameResult(GameResult gameResult)
         {
-            var find = _context.GameResults
-                        .Where(x => x.Id == gameResult.Id)
-                        .FirstOrDefault();
+            var result = await _httpClient.DeleteAsync($"api/ranking/{gameResult.Id}");
 
-            if (find == null)
+            if (result.IsSuccessStatusCode == false)
             {
-                return Task.FromResult(false);
+                throw new Exception("DeleteGameResult Failed.");
             }
 
-            _context.GameResults.Remove(gameResult);
-            _context.SaveChanges();
-
-            return Task.FromResult(true);
+            return true;
         }
     }
 }

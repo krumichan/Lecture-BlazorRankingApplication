@@ -41,7 +41,11 @@ namespace Lecture_BlazorRankingApplication
             services.AddServerSideBlazor();
             services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
 
-            services.AddScoped<RankingService>();
+            services.AddHttpClient<RankingService>(cli =>
+            {
+                // Properties -> launchSettings.json 에서 port 확인 가능.
+                cli.BaseAddress = new Uri("https://localhost:44319");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

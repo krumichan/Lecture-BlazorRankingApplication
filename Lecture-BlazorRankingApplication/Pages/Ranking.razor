@@ -1,5 +1,5 @@
 ﻿@page "/ranking"
-@using Lecture_BlazorRankingApplication.Data.Models
+@using SharedData.Models
 @using Lecture_BlazorRankingApplication.Data.Services
 
 @inject RankingService RankingService
@@ -116,7 +116,7 @@
 
     private async Task DeleteGameResult(GameResult gameResult)
     {
-        var result = RankingService.DeleteGameResult(gameResult);
+        var result = await RankingService.DeleteGameResult(gameResult);
         _gameResults = await RankingService.GetGameResultsAsync();
     }
 
@@ -126,12 +126,12 @@
         if (_gameResult.Id == 0)
         {
             _gameResult.Date = DateTime.Now;
-            var result = RankingService.AddGameResult(_gameResult);
+            var result = await RankingService.AddGameResult(_gameResult);
         }
         // Update
         else
         {
-            var result = RankingService.UpdateGameResult(_gameResult);
+            var result = await RankingService.UpdateGameResult(_gameResult);
         }
 
         _showPopup = false;

@@ -1,4 +1,4 @@
-﻿using Lecture_BlazorRankingApplication.Data.Models;
+﻿using SharedData.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,8 +9,6 @@ namespace Lecture_BlazorRankingApplication.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-        public DbSet<GameResult> GameResults { get; set; }
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
