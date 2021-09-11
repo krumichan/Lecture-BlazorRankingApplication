@@ -105,3 +105,5 @@ C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture
 C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\Lecture-BlazorRankingApplication.genruntimeconfig.cache
 C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Ranking.razor.g.cs
 C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\obj\Debug\netcoreapp3.1\Razor\Pages\Ranking.razor.g.cs
+C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\bin\Debug\netcoreapp3.1\SharedData.dll
+C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\bin\Debug\netcoreapp3.1\SharedData.pdb

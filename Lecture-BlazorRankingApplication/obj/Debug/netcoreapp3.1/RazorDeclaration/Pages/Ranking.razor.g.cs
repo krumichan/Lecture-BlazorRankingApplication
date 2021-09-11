@@ -77,7 +77,7 @@ using Lecture_BlazorRankingApplication.Shared;
 #nullable disable
 #nullable restore
 #line 2 "C:\developer\unityws\lecture\web server\Lecture-BlazorRankingApplication\Lecture-BlazorRankingApplication\Pages\Ranking.razor"
-using Lecture_BlazorRankingApplication.Data.Models;
+using SharedData.Models;
 
 #line default
 #line hidden
@@ -130,7 +130,7 @@ using Lecture_BlazorRankingApplication.Data.Services;
 
     private async Task DeleteGameResult(GameResult gameResult)
     {
-        var result = RankingService.DeleteGameResult(gameResult);
+        var result = await RankingService.DeleteGameResult(gameResult);
         _gameResults = await RankingService.GetGameResultsAsync();
     }
 
@@ -140,12 +140,12 @@ using Lecture_BlazorRankingApplication.Data.Services;
         if (_gameResult.Id == 0)
         {
             _gameResult.Date = DateTime.Now;
-            var result = RankingService.AddGameResult(_gameResult);
+            var result = await RankingService.AddGameResult(_gameResult);
         }
         // Update
         else
         {
-            var result = RankingService.UpdateGameResult(_gameResult);
+            var result = await RankingService.UpdateGameResult(_gameResult);
         }
 
         _showPopup = false;
